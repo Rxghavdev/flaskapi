@@ -59,7 +59,7 @@ function setup_venv() {
     virtualenv -p $VM_PY_PATH $VM_HOME_DIR/venv
 
     echo ======== Activating virtual env =======
-    source $VM_HOME_DIR/venv/bin/activate
+    source $VM_HOME_DIR/path/to/venv/bin/activate
 }
 
 function clone_app_repository() {
