@@ -17,6 +17,9 @@ class Config(Document):
     Notification_custom_flag = BooleanField(default=False)
     Notification_custom_message = StringField()
     service_name = StringField(required=True)
+    ad_id = StringField()
+    app_link = StringField()
+    
 
 @app.route('/')
 def test_connection():
