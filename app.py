@@ -13,13 +13,14 @@ client = MongoClient(uri)
 connect(db='clusterapp', host=uri)
 
 class Config(Document):
-    url = StringField(required=True)
+    service_url = StringField(required=True)
     Notification_custom_flag = BooleanField(default=False)
     Notification_custom_message = StringField()
     service_name = StringField(required=True)
     ad_id = StringField()
-    app_link = StringField()
-    
+    android_link = StringField()
+    ios_link = StringField()
+
 
 @app.route('/')
 def test_connection():
@@ -38,13 +39,13 @@ def get_data():
 def post_config():
     sample_data = [
         {
-            'url': 'https://example1.com',
+            'service_url': 'https://example1.com',
             'Notification_custom_flag': True,
             'Notification_custom_message': 'Sample Message 1',
             'service_name': 'Service 1'
         },
         {
-            'url': 'https://example2.com',
+            'service_url': 'https://example2.com',
             'Notification_custom_flag': False,
             'Notification_custom_message': 'Sample Message 2',
             'service_name': 'Service 2'
